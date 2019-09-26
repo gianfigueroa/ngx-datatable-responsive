@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "datatable-responsive": [
+        "dist/datatable-responsive"
+      ],
+      "datatable-responsive/*": [
+        "dist/datatable-responsive/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -26,7 +26,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
@@ -117,6 +118,41 @@
             "production": {
               "devServerTarget": "ngx-datatable-responsive:serve:production"
             }
+          }
+        }
+      }
+    },
+    "datatable-responsive": {
+      "projectType": "library",
+      "root": "projects/datatable-responsive",
+      "sourceRoot": "projects/datatable-responsive/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/datatable-responsive/tsconfig.lib.json",
+            "project": "projects/datatable-responsive/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/datatable-responsive/src/test.ts",
+            "tsConfig": "projects/datatable-responsive/tsconfig.spec.json",
+            "karmaConfig": "projects/datatable-responsive/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/datatable-responsive/tsconfig.lib.json",
+              "projects/datatable-responsive/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
